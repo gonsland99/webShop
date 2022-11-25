@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	function validator(){
+		var frmLogin = document.frmLogin;
+		var id = frmLogin.id.value;
+		var pw = frmLogin.pw.value;
+		
+		if((id.length==0 || id=="") || (pw.length==0 || pw=="")){
+			alert("아이디 비밀번호를 입력해주세요.")
+		}else{
+			frmLogin.method = "post";
+			frmLogin.action = "login3";
+			frmLogin.submit();
+		}
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frmLogin" method="get" action="login3" encType="utf-8">
+		아이디 : <input type="text" name="id"/><br/>
+		비번 : <input type="text" name="pw"/><br/>
+		<input type="button" onclick="validator()" value="로그인"/>
+		<input type="hidden" name="address" value="대구시"/>
+	</form>
+</body>
+</html>
