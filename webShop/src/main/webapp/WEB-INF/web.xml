@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <!--  
   <servlet>
   	<servlet-name>a</servlet-name>
   	<servlet-class>ex.pro05.sec01.ex01.FirstServlet</servlet-class>
@@ -25,4 +26,5 @@
   	<servlet-name>b</servlet-name>
   	<url-pattern>/second</url-pattern>
   </servlet-mapping>
+  -->
 </web-app>
