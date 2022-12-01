@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class EncoderFilter implements Filter{
 	ServletContext context;
 	public void init(FilterConfig fconfig)throws ServletException{
