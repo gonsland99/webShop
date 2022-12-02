@@ -68,7 +68,7 @@
 		</c:when>
 		</c:choose>
 	</table>
-	<a class="cls1" href="">
+	<a class="cls1" href="${contextPath}/board/articleForm">
 		<p class="cls2">글쓰기</p>
 	</a>
 </body>
