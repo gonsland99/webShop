@@ -1,7 +1,9 @@
-package ex.pro17.sec01.board3;
+package ex.pro17.sec01.board4;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +22,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FileUtils;
 
-//@WebServlet("/board/*")
+@WebServlet("/board/*")
 public class BoardController extends HttpServlet {
     private static String ARTICLE_IMAGE_REPO = "C:\\board\\article_image";
 	BoardService boardService;
@@ -42,7 +44,6 @@ public class BoardController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		String action = request.getPathInfo();
-		
 		try {
 			List<ArticleVO> articleList = new ArrayList<>();
 			if(action == null) {
@@ -80,6 +81,11 @@ public class BoardController extends HttpServlet {
 									+ "/board/list';"+"</script>");
 				
 				return;
+			}else if(action.equals("/view")) {
+				String articleNO = request.getParameter("articleNO");
+				articleVO = boardService.viewArticle(Integer.parseInt(articleNO));
+				request.setAttribute("article", articleVO);
+				nextPage = "/ex/pro17/board/view.jsp";
 			}
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);
