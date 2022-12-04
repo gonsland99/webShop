@@ -9,12 +9,27 @@
 <head>
 <meta charset="UTF-8">
 <title>글보기</title>
+<style>
+	#tr_btn_modify{
+		display:none;
+	}
+</style>
 <script type="text/javascript">
-      function backToList(obj){
-	    obj.action="${contextPath}/board/list";
-	    obj.submit();
-	  }
-   
+	function backToList(obj){
+		obj.action="${contextPath}/board/list";
+		obj.submit();
+	}
+	function fn_enable(obj){
+		document.getElementById("i_title").disabled=false;
+		document.getElementById("i_content").disabled=false;
+		document.getElementById("i_imageFileName").disabled=false;
+		document.getElementById("tr_btn_modify").style.display="table-row";
+		document.getElementById("tr_btn").style.display="none";
+	}
+	function fn_modify_article(obj){
+		obj.action="${contextPath}/board/mod";
+		obj.submit();
+	}
    </script>
 </head>
 <body>
@@ -44,8 +59,8 @@
 					<td width="20%" align="center" bgcolor="#FF9933" rowspan="2">이미지</td>
 					<td>
 						<input type="hidden" name="originalFileName" value="${article.imageFileName}"/>
-						<img src="${contextPath}/download.do?imageFileName=${article.imageFileName}&
-						articleNO=${article.articleNO}" id="preview" /><br>
+						<img src="${contextPath}/download?imageFileName=${article.imageFileName}&
+						articleNO=${article.articleNO}" id="preview" src="#" width=150 height=150/><br>
 					</td>
 				</tr>
 				<tr>
@@ -57,8 +72,10 @@
 				<td><input type=text value="<fmt:formatDate value="${article.writeDate}" />" disabled /></td>
 			</tr>
 			<tr id="tr_btn_modify">
-				<td colspan="2" align="center"><input type=button value="수정하기" onClick="fn_modify_article(frmArticle)"> 
-					<input type=button value="취소" onClick="backToList(frmArticle)"></td>
+				<td colspan="2" align="center">
+					<input type=button value="수정완료" onClick="fn_modify_article(frmArticle)"> 
+					<input type=button value="취소" onClick="backToList(frmArticle)">
+				</td>
 			</tr>
 			<tr id="tr_btn">
 				<td colspan=2 align="center">

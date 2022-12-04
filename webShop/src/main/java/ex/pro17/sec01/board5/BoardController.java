@@ -1,4 +1,4 @@
-package ex.pro17.sec01.board4;
+package ex.pro17.sec01.board5;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -85,7 +85,36 @@ public class BoardController extends HttpServlet {
 				String articleNO = request.getParameter("articleNO");
 				articleVO = boardService.viewArticle(Integer.parseInt(articleNO));
 				request.setAttribute("article", articleVO);
-				nextPage = "/ex/pro17/board/view.jsp";
+				nextPage = "/ex/pro17/board/view.jsp";	
+			}else if(action.equals("/mod")) {
+				Map<String,String> map = upload(request, response);
+				int articleNO = Integer.parseInt(map.get("articleNO"));
+				String title = map.get("title");
+				String content = map.get("content");
+				String imageFileName = map.get("imageFileName");
+				articleVO.setArticleNO(articleNO);
+				articleVO.setParentNO(0);
+				articleVO.setId("hong");
+				articleVO.setTitle(title);
+				articleVO.setContent(content);
+				articleVO.setImageFileName(imageFileName);
+				boardService.modArticle(articleVO);
+				if(imageFileName!=null && imageFileName.length()!=0) {
+					String originalFileName = map.get("originalFileName");
+					File srcFile = new File(ARTICLE_IMAGE_REPO+"\\"+"temp"+"\\"+imageFileName);
+					File destDir = new File(ARTICLE_IMAGE_REPO+"\\"+articleNO);
+					destDir.mkdirs();
+					FileUtils.moveFileToDirectory(srcFile, destDir, true);
+					File oldFile = new File(ARTICLE_IMAGE_REPO+"\\"+articleNO+"\\"+originalFileName);
+					oldFile.delete();
+				}
+				PrintWriter out = response.getWriter();
+				out.print("<script>"+ " alert('글 수정');"
+									+ " location.href='"
+									+ request.getContextPath()
+									+ "/board/list';"+"</script>");
+				
+				return;
 			}
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);
