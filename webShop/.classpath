@@ -10,5 +10,10 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/apache-tomcat-9.0.53/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/곤/webStudy/jar/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/spring.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
