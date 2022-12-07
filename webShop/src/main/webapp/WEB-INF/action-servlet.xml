@@ -33,7 +33,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		</property>
 	</bean>
 
-	<bean id="userController" class="ex.pro21.ex02.UserController">
+	<bean id="userController" class="ex.pro21.ex03.UserController">
 		<property name="methodNameResolver">
 			<ref local="userMethodNameResolver" />
 		</property>
