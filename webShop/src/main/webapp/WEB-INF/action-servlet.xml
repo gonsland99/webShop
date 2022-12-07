@@ -10,40 +10,52 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-<!-- 
-	<bean id="simpleUrlController" class="ex.pro21.ex01.SimpleUrlController"/>
-	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<property  name="mappings">
-			<props>
-				<prop key="/index.do">simpleUrlController</prop>
-			</props>
-		</property>  
-	</bean>
- -->
- 	<bean id="viewResolver"	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/ex/pro21/" />
+	<!-- <bean id="simpleUrlController" class="ex.pro21.ex01.SimpleUrlController"/> 
+		<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+		<property name="mappings"> <props> <prop key="/index.do">simpleUrlController</prop> 
+		</props> </property> </bean> -->
+	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" 
+		/> <property name="prefix" value="/ex/pro21/" /> <property name="suffix" 
+		value=".jsp" /> </bean> <bean id="userUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+		<property name="mappings"> <props> <prop key="/*.do">userController</prop> 
+		</props> </property> </bean> <bean id="userController" class="ex.pro21.ex04.UserController"> 
+		<property name="methodNameResolver"> <ref local="userMethodNameResolver" 
+		/> </property> </bean> <bean id="userMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver"> 
+		<property name="mappings"> <props> <prop key="/login.do">login</prop> <prop 
+		key="/memberInfo.do">memberInfo</prop> </props> </property> </bean> -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<bean id="userUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<bean id="memberController"
+		class="ex.pro22.controller.MemberControllerImpl">
+		<property name="methodNameResolver">
+			<ref local="methodResolver" />
+		</property>
+		<property name="memberService" ref="memberService" />
+	</bean>
+
+	<bean id="methodResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
 		<property name="mappings">
 			<props>
-				<prop key="/*.do">userController</prop>
+				<prop key="/member/listMembers.do">listMembers</prop>
+				<prop key="/member/addMember.do">addMember</prop>
+				<prop key="/member/memberForm.do">memberForm</prop>
+				<prop key="/member/memberDetail.do">memberDetail</prop>
 			</props>
 		</property>
 	</bean>
 
-	<bean id="userController" class="ex.pro21.ex04.UserController">
-		<property name="methodNameResolver">
-			<ref local="userMethodNameResolver" />
-		</property>
-	</bean>
-
-	<bean id="userMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+	<bean id="userUrlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="/login.do">login</prop>
-				<prop key="/memberInfo.do">memberInfo</prop> 
+				<prop key="/member/*.do">memberController</prop>
 			</props>
 		</property>
 	</bean>
