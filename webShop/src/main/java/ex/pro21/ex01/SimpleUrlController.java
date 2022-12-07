@@ -10,6 +10,6 @@ public class SimpleUrlController implements Controller{
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse resp)
 	throws Exception{
-		return new ModelAndView("index.jsp");
+		return new ModelAndView("/ex/pro21/index.jsp");
 	}
 }
