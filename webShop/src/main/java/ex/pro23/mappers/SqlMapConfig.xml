@@ -21,6 +21,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 
 	<mappers>
-		<mapper resource="ex/pro23/ex01/mappers/member.xml" />
+		<mapper resource="ex/pro23/mappers/member.xml" />
 	</mappers>
 </configuration>

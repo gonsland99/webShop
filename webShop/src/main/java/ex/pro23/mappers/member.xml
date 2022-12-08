@@ -11,8 +11,19 @@
 		<result property="joinDate" column="joinDate" />
 	</resultMap>
 	<select id="selectAllMemberList" resultMap="memResult">
-      <![CDATA[
-         select * from t_member	order by joinDate desc	 	
-      ]]>
+		<![CDATA[
+		   select * from t_member	order by joinDate desc	 	
+		]]>
+	</select>
+	<select id="selectName" resultType="String">
+		<![CDATA[
+			select name from t_member where id='hong'
+		]]>
+	</select>
+	<select id="selectPw" resultType="int">
+		<![CDATA[
+			select pw from t_member where id='hong'
+		]]>
+
 	</select>
 </mapper>

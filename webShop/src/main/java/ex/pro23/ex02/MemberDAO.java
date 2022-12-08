@@ -1,7 +1,6 @@
-package ex.pro23.ex01;
+package ex.pro23.ex02;
 
 import java.io.Reader;
-import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,35 +9,30 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MemberDAO {
 	private static SqlSessionFactory sqlMapper = null;
-
-	public static SqlSessionFactory getInstance() {
-		if (sqlMapper == null) {
+	private static SqlSessionFactory getInstance() {
+		if(sqlMapper == null) {
 			try {
 				String resource = "ex/pro23/mappers/SqlMapConfig.xml";
 				Reader reader = Resources.getResourceAsReader(resource);
 				sqlMapper = new SqlSessionFactoryBuilder().build(reader);
 				reader.close();
-			} catch (Exception e) {
+			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
 		return sqlMapper;
 	}
-
-	public List<MemberVO> selectAllMemberList() {
+	
+	public String selectName() {
 		sqlMapper = getInstance();
 		SqlSession session = sqlMapper.openSession();
-		List<MemberVO> memlist = null;
-		memlist = session.selectList("mapper.member.selectAllMemberList");
-		return memlist;
+		String name = (String) session.selectOne("mapper.member.selectName");
+		return name;
 	}
-	
-//	 public List<HashMap<String, String>> selectAllMemberList() { 
-//		sqlMapper = getInstance(); 
-//     	SqlSession session = sqlMapper.openSession();
-//		List<HashMap<String, String>> memlist = null; 
-//   	memlist = session.selectList("mapper.member.selectAllMemberList"); 
-//		return memlist; 
-//	 }
-	
+	public int selectPw() {
+		sqlMapper = getInstance();
+		SqlSession session = sqlMapper.openSession();
+		int pw = (int) session.selectOne("mapper.member.selectPw");
+		return pw;
+	}
 }
