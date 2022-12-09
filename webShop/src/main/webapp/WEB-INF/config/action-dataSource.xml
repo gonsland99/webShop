@@ -11,7 +11,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-
+<!-- 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -27,7 +27,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
-
+ -->
 	<bean id="memberDAO" class="ex.pro22.dao.MemberDAOImpl">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
