@@ -6,14 +6,6 @@
 		id="WebApp_ID" version="4.0"
 >
   <display-name>webShop</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
   <!--  
   <servlet>
   	<servlet-name>a</servlet-name>
@@ -80,9 +72,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/config/action-service.xml
-			/WEB-INF/config/action-dataSource.xml
 			/WEB-INF/config/action-mybatis.xml
-			/WEB-INF/config/action-service.xml
 		</param-value>
 	</context-param>
 </web-app>
