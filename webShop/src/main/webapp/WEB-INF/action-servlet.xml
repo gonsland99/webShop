@@ -27,11 +27,12 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-		<!-- <property name="prefix" value="/WEB-INF/views/member" /> -->
+		<property name="prefix" value="/WEB-INF/views/member" />
+		<!-- 
 		<property name="prefix" value="/WEB-INF/views/account/" />
+		 -->
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!-- 
 	<bean id="memberController"
 		class="ex.pro24.controller.MemberControllerImpl">
 		<property name="methodNameResolver">
@@ -39,25 +40,23 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		</property>
 		<property name="memberService" ref="memberService" />
 	</bean>
-	 -->
+	<!-- 
 	<bean id="accController" class="ex.pro25.AccountController">
 		<property name="methodNameResolver">
 			<ref local="methodResolver" />
 		</property>
 		<property name="accService" ref="accService" />
 	</bean>
-
+	 -->
 	<bean id="methodResolver"
 		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
 		<property name="mappings">
 			<props>
-				<!-- 
 				<prop key="/member/listMembers.do">listMembers</prop>
 				<prop key="/member/addMember.do">addMember</prop>
 				<prop key="/member/memberForm.do">memberForm</prop>
 				<prop key="/member/memberDetail.do">memberDetail</prop>
 				<prop key="/member/removeMember.do">removeMember</prop>
-				 -->
 				<prop key="/account/sendMoney.do">sendMoney</prop>
 			</props>
 		</property>
@@ -67,8 +66,10 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<!-- <prop key="/member/*.do">memberController</prop> -->
+				<prop key="/member/*.do">memberController</prop>
+				<!-- 
 				<prop key="/account/*.do">accController</prop>
+				 -->
 			</props>
 		</property>
 	</bean>

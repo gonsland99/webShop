@@ -9,15 +9,14 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
-	<!-- 
 	<bean id="memberService" class="ex.pro24.service.MemberServiceImpl">
 		<property name="memberDAO" ref="memberDAO" />
 	</bean>
-	 -->
+	<!-- 
 	<bean id="accService" class="ex.pro25.AccountService">
 		<property name="accDAO" ref="accDAO"/>
 	</bean>
-
+	 -->
 </beans>
 
 
