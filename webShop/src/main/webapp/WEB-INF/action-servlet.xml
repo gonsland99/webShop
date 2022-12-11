@@ -83,9 +83,9 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	</bean>
 	
 	<!-- annotation 설정 -->
-	 <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
-  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
-	<context:component-scan base-package="ex.pro26.ex01"/>
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+  	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	<context:component-scan base-package="ex.pro26.*"/>
 </beans>
    
 
