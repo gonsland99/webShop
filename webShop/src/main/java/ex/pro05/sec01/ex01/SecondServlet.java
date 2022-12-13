@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class SecondServlet extends HttpServlet{
-	@Override
+	@Override 
 	public void init() throws ServletException{
 		System.out.println("init 실행2");
 	}

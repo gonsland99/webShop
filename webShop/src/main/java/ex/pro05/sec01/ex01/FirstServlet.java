@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FirstServlet extends HttpServlet{
 	@Override
 	public void init() throws ServletException{
-		System.out.println("init 실행");
+		System.out.println("init 실행"); 
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/third")
 public class ThirdServlet extends HttpServlet{
-	@Override
+	@Override 
 	public void init() throws ServletException{
 		System.out.println("init 실행3");
 	}
