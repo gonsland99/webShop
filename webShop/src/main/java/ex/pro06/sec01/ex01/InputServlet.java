@@ -17,7 +17,7 @@ public class InputServlet extends HttpServlet{
 		String pw = req.getParameter("pw");
 		
 		System.out.println(id);
-		System.out.println(pw);
+		System.out.println(pw); 
 		
 		String[] subejct = req.getParameterValues("subject");
 		for(String s:subejct) {

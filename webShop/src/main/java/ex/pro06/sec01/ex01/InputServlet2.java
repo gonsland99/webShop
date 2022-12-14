@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class InputServlet2 extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException, IOException{
-		req.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("utf-8"); 
 		Enumeration enu = req.getParameterNames();
 		while(enu.hasMoreElements()) {
 			String name = (String)enu.nextElement();
