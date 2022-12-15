@@ -7,7 +7,7 @@ public class MemberVO {
 	private String pw;
 	private String name;
 	private String email;
-	private Date joinDate;
+	private Date joinDate; 
 	
 	public MemberVO(String id, String pw, String name, String email) {
 		super();

@@ -18,7 +18,7 @@ public class MemberDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
 	
-	public MemberDAO() {
+	public MemberDAO() { 
 		try {
 			Context ctx = new InitialContext();
 			Context envContext = (Context) ctx.lookup("java:/comp/env");

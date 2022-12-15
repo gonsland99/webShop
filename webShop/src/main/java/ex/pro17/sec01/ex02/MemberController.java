@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet("/member/*")
 public class MemberController extends HttpServlet {
 	MemberDAO memberDAO;
-	
+	 
     public MemberController() {
-    	memberDAO = new MemberDAO();
+    	memberDAO = new MemberDAO(); 
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

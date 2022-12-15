@@ -8,7 +8,7 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<c:choose>
 	<c:when test="${msg == 'addMember'}">
