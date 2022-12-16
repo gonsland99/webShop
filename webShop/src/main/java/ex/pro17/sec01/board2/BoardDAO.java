@@ -83,7 +83,10 @@ public class BoardDAO {
 	public void insertArticle(ArticleVO article) {
 		try {
 			con = dataFactory.getConnection();
+			//외부에서 prepared되어지는 sql문 관련 메서드는 먼저 호출하여 값을 가져올것
+			//add메서드 내 sql문이 먼저 prepared 되어지면 getNewArticleNO의 sql문 호출과 관련해 에러발생(SQLException)
 			int articleNO = getNewArticleNO();
+			
 			int parentNO = article.getParentNO();
 			String title = article.getTitle();
 			String content = article.getContent();
