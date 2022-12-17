@@ -11,7 +11,7 @@ public class ArticleVO {
 	private String imageFileName;
 	private String id;
 	private Date writeDate;
-	
+	 
 	public ArticleVO() {};
 	
 	public ArticleVO(int level, int articleNO, int parentNO, String title, String content, String imageFileName,

@@ -133,7 +133,7 @@ public class BoardController extends HttpServlet {
 		factory.setSizeThreshold(1024*1024);
 		//해당 매개변수를 다른객체형태로 받음
 		ServletFileUpload upload = new ServletFileUpload(factory);
-		
+		 
 		try {
 			List items = upload.parseRequest(request);
 			for(int i=0; i<items.size(); i++) {

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>글보기</title>
-<style>
+<style> 
 	#tr_btn_modify{
 		display:none;
 	}

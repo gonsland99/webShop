@@ -7,7 +7,7 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 <meta charset="UTF-8">

@@ -8,7 +8,7 @@ public class BoardService {
 	public BoardService() {
 		boardDAO = new BoardDAO();
 	}
-	
+	 
 	public List<ArticleVO> listArticle(){
 		List<ArticleVO> articleList = boardDAO.selectAllArticle();
 		return articleList;

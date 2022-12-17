@@ -129,7 +129,7 @@ public class BoardController extends HttpServlet {
 									+ request.getContextPath()
 									+ "/board/list';"+"</script>");
 				
-				return;
+				return; 
 			}
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);
