@@ -79,7 +79,6 @@ public class BoardController extends HttpServlet {
 									+ " location.href='"
 									+ request.getContextPath()
 									+ "/board/list';"+"</script>");
-				
 				return;
 			}else if(action.equals("/view")) {
 				String articleNO = request.getParameter("articleNO");
